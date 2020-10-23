@@ -1,6 +1,7 @@
+
 body {
 	background-image: linear-gradient(#192537, white,  rgb(172, 155, 126));
-  	font-size: 28px;
+  font-size: 28px;
 }
 
 ul {
@@ -9,7 +10,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky; Safari
   position: sticky;
   top: 0;
 }
@@ -48,33 +49,19 @@ li a:hover {
 h1{
 	padding:30px;
 	padding-left:50px;
-  	  font-family: fantasy;
-  	  font-variant: small-caps;
-  font-stretch: expanded;
+	font-family: fantasy;
+	font-variant: small-caps;
+	font-stretch: expanded;
   	color:rgb(25, 37, 55);
 }
 
-button{
+.formbutton{
 	color:black;
 	font-family:fantasy;
-	background-image: linear-gradient(rgb(172, 155, 126), white,  rgb(172, 155, 126));
+    background-image: linear-gradient(rgb(172, 155, 126), white,  rgb(172, 155, 126));
 	padding:10px;
 	margin-left:30px;
 	font-size:20px;
-}
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: #192537;
-}
-
-.flex-container > div {
-  background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
 }
 
 table{
@@ -111,9 +98,82 @@ footer{
 	font-family:fantasy;
 }
 
-#total{
-	font-family:fantasy;
-	padding-left:50px;
-	font-size:20
+.flex-container{
+	  display: flex;
+	  padding-left:300px;
 	
+}
+
+
+.login{
+	padding:100px;
+	
+}
+
+.register{
+		padding:300px, 10px, 10px, 300px;
+	
+}
+
+label{
+	font-size:25px;
+	font-family:fantasy;
+}
+
+.inputs {
+  border: none;
+  border-bottom: 2px solid rgb(173, 156, 126);
+  background:none;
+  font-size:20px;
+  background-color:none;
+  font-family:fantasy;
+} 
+
+h3{
+	font-family:fantasy;
+}
+h2{
+	font-family:fantasy;
+	padding-left:500px;
+}
+
+p{
+	font-family:fantasy;
+	padding-left:20px;
+	text-align:center;
+	color: rgb(26, 63, 119);
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid rgb(173, 156, 126);
+  background:none;
+  font-size:20px;
+  background-color:none;
+  font-family:fantasy;
+}
+
+.flexthis{
+	display:flex;
+}
+
+
+.leftside{
+	width:500px;
+	display:inline-block;
+}
+
+.neww{
+	display:flex;
+	padding-left:300px;
+}
+
+.centerthis{
+	padding-left:680px;
+}
+
+.flexandspace{
+	display:flex;
+	margin:20px;
+	padding-left:520px;
 }

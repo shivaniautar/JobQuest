@@ -24,32 +24,37 @@
 </div>
 
 <ul>
-<li><a style="margin-right:400px;" href="/logout">Logout</a></li>
+<li><a style="margin-right:420px;" href="/logout">Logout</a></li>
   <li><a href="#contact">About Us</a></li>
   <li><a href="#news">Seminars</a></li>
-  <li><a href="#contact">About Us</a></li>
-    <li><a href="#news">Tips</a></li>
+  <li><a href="#contact">Tips</a></li>
+    <li><a href="#news">Stats</a></li>
     <li><a class="active" href="/job-quest">Home</a></li>
   
 </ul>
 
 	<h1>Welcome <c:out value=" ${user.firstName} ${user.lastName}" /> !</h1>
+	
+	<p id="total">You currently have a total of <c:out value="${user.jobapps.size()}"></c:out> job application(s)!</p>
 
-	<div>
+	<div class="flex-container">
 	<p><a href="/new/jobapplication"><button>Add a New Job Application</button></a></p>
-	<h2>Sort By</h2>
-	<p><a href="/"><button>Application Date</button></a></p>
+	<h2 class="sortby">Sort By</h2>
 	<p><a href="/"><button>Company</button></a></p>
-	<p><a href="/"><button>Role</button></a></p>
+	<p><a href="/"><button>Location</button></a></p>
+	<p><a href="/"><button>Role Level</button></a></p>
+	<p><a href="/"><button>Position</button></a></p>
+	<p><a href="/"><button>Salary</button></a></p>
+	<p><a href="/"><button>Application Date</button></a></p>
 	<p><a href="/"><button>Status</button></a></p>
 	
 	</div>
 	
 	
 	
-	<table style="border: 3px solid black; padding:7px;">
+	<table>
 	    <thead>
-	        <tr>
+	        <tr class="toprow">
 	            <th>Company:</th>
 	            <th>Location:</th>
 	            <th>Role Level:</th>
@@ -80,6 +85,8 @@
 		            </c:forEach>
 	    </tbody>
 	</table><br><br>
+	
+	<footer> © Copyright 2020 Shivani Autar</footer>
 	
 	
 

@@ -3,21 +3,85 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "form" uri = "http://www.springframework.org/tags/form" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Shows</title>
+<link rel="stylesheet" href="css/main.css">
+<title>Job-Quest</title>
 </head>
 <body>
 
 
-	<h1>Welcome, <c:out value="${user.firstName}" /></h1>
+<div class="header">
+                <img class="appname" src="/images/Name.PNG" alt="Job Quest" width="300px">
+</div>
 
-	<a href="/logout">Logout</a>
-	<h1>TV Shows</h1>
+<ul>
+<li><a style="margin-right:400px;" href="/logout">Logout</a></li>
+  <li><a href="#contact">About Us</a></li>
+  <li><a href="#news">Seminars</a></li>
+  <li><a href="#contact">About Us</a></li>
+    <li><a href="#news">Tips</a></li>
+    <li><a class="active" href="/job-quest">Home</a></li>
+  
+</ul>
 
-	<p><a href="/shows/new"><button>Add a Show</button></a></p>
+	<h1>Welcome <c:out value=" ${user.firstName} ${user.lastName}" /> !</h1>
+
+	<div>
+	<p><a href="/new/jobapplication"><button>Add a New Job Application</button></a></p>
+	<h2>Sort By</h2>
+	<p><a href="/"><button>Application Date</button></a></p>
+	<p><a href="/"><button>Company</button></a></p>
+	<p><a href="/"><button>Role</button></a></p>
+	<p><a href="/"><button>Status</button></a></p>
+	
+	</div>
+	
+	
+	
+	<table style="border: 3px solid black; padding:7px;">
+	    <thead>
+	        <tr>
+	            <th>Company:</th>
+	            <th>Location:</th>
+	            <th>Role Level:</th>
+	           	<th>Position Title:</th>
+	            <th>Salary:</th>
+	            <th>Link:</th>
+	            <th>Application Date:</th>
+	            <th>Status:</th>
+	            <th>Comments:</th>
+	            <th>Actions:</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    
+		    		<c:forEach items="${jobs}" var="job">
+		    	<tr>
+		            	<td><a href="/jobapplication/${job.id}"><c:out value="${job.company}"></c:out></a></td>
+		            	<td><c:out value="${job.location}"></c:out></td>
+		            	<td><c:out value="${job.roletype}"></c:out></td>
+		            	<td><c:out value="${job.role}"></c:out></td>
+		            	<td><c:out value="${job.salary}"></c:out></td>
+		            	<td><a href="${job.link}"><c:out value="${job.link}"></c:out></a></td>
+		            	<td><c:out value="${job.appdate}"></c:out></td>
+		            	<td><c:out value="${job.status}"></c:out></td>
+		            	<td><c:out value="${job.comments}"></c:out></td>
+		            	<td><a href="/jobapplication/${job.id}/edit">Update Application</a></td>
+		    	</tr>
+		            </c:forEach>
+	    </tbody>
+	</table><br><br>
+	
+	
 
 
 

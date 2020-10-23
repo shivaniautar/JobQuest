@@ -1,12 +1,13 @@
 package com.codingdojo.jobtracker.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import com.codingdojo.jobtracker.models.Jobapp;
+import com.codingdojo.jobtracker.models.User;
 import com.codingdojo.jobtracker.repositories.JobappRepository;
 
 
@@ -63,37 +64,14 @@ public class JobappService {
 	}
 	
 	
+	public List<Jobapp> findAll(){
+		return jobappRepository.findAll();
+	}
 	
-//	public Show create(Show show) {
-//		return showRepository.save(show);
-//	}
-//	
-//	public Show update(Show show) {
-//		return showRepository.save(show);
-//	}
-//	
-//	public List<Show> findAll() {
-//		return showRepository.findAll();
-//	}
-//	
-//	public Show findOneById(Long id) {
-//		Optional<Show> optionalShow = showRepository.findById(id);
-//		
-//		if(optionalShow.isPresent()) {
-//			return optionalShow.get();
-//		} else {
-//			return null;
-//		}
-//	}
-//	
-//	public void delete(Long id) {
-//		Optional<Show> optionalShow = showRepository.findById(id);
-//		if(optionalShow.isPresent()) {
-//			// CascadeType.REMOVE in Show.java will also delete the reviews associated with that show.
-//			showRepository.deleteById(id);
-//		} else {
-//			System.out.println("Show does not exist");
-//		}
-//	}
+	public List<Jobapp> allByUser(User user) {
+		return jobappRepository.findByUser(user);
+	}
+
+
 
 }

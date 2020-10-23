@@ -11,7 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="jobapps")
 public class Jobapp {
@@ -26,6 +29,9 @@ public class Jobapp {
 	@Size(min=1, message="Please provide a location or remote")
 	private String location;
 	
+	@Size(min=1, message="Please provide a role type")
+	private String roletype;
+	
 	@Size(min=1, message="Please provide a role")
 	private String role;
 	
@@ -35,6 +41,9 @@ public class Jobapp {
 	@Size(min=1, message="Please provide a link")
 	private String link;
 	
+	
+	@NotNull(message="Please enter a date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date appdate;
 	
 	@Size(min=1, message="Please provide a status")
@@ -42,8 +51,11 @@ public class Jobapp {
 	
 	private String comments;
 	
-	@Column(updatable=false)
+    @Column(updatable=false)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
+    
+    @DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
 	// ---------- RELATIONSHIPS ----------
@@ -56,22 +68,21 @@ public class Jobapp {
 	
 		public Jobapp() {
 		}
-
-	public Jobapp(Long id, @Size(min = 1, message = "Please provide a company name") String company,
+		
+public Jobapp(Long id, @Size(min = 1, message = "Please provide a company name") String company,
 			@Size(min = 1, message = "Please provide a location or remote") String location,
+			@Size(min = 1, message = "Please provide a role type") String roletype,
 			@Size(min = 1, message = "Please provide a role") String role,
 			@Size(min = 1, message = "Please provide a salary, if you don't have one yet put TBD.") String salary,
-			@Size(min = 1, message = "Please provide a link") String link, 
-			Date appdate,
-			@Size(min = 1, message = "Please provide a status") String status, 
-			String comments, 
-			Date createdAt,
-			Date updatedAt, 
-			User user) {
+			@Size(min = 1, message = "Please provide a link") String link,
+			@NotNull(message = "Please enter a date") Date appdate,
+			@Size(min = 1, message = "Please provide a status") String status, String comments, Date createdAt,
+			Date updatedAt, User user) {
 		super();
 		this.id = id;
 		this.company = company;
 		this.location = location;
+		this.roletype = roletype;
 		this.role = role;
 		this.salary = salary;
 		this.link = link;
@@ -82,7 +93,43 @@ public class Jobapp {
 		this.updatedAt = updatedAt;
 		this.user = user;
 	}
-	
+
+
+
+
+
+
+
+
+
+//	public Jobapp(Long id, @Size(min = 1, message = "Please provide a company name") String company,
+//			@Size(min = 1, message = "Please provide a location or remote") String location,
+//			@Size(min = 1, message = "Please provide a role tyoe") String roletype,
+//			@Size(min = 1, message = "Please provide a role") String role,
+//			@Size(min = 1, message = "Please provide a salary, if you don't have one yet put TBD.") String salary,
+//			@Size(min = 1, message = "Please provide a link") String link, 
+//			Date appdate,
+//			@Size(min = 1, message = "Please provide a status") String status, 
+//			String comments, 
+//			Date createdAt,
+//			Date updatedAt, 
+//			User user) {
+//		super();
+//		this.id = id;
+//		this.company = company;
+//		this.location = location;
+//		this.roletype = roletype;
+//		this.role = role;
+//		this.salary = salary;
+//		this.link = link;
+//		this.appdate = appdate;
+//		this.status = status;
+//		this.comments = comments;
+//		this.createdAt = createdAt;
+//		this.updatedAt = updatedAt;
+//		this.user = user;
+//	}
+//	
 	
 	// ---------- GETTERS AND SETTERS ----------
 	
@@ -184,6 +231,15 @@ public class Jobapp {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public String getRoletype() {
+		return roletype;
+	}
+
+	public void setRoletype(String roletype) {
+		this.roletype = roletype;
+	}
+	
 	
 	
 	

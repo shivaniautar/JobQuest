@@ -72,6 +72,8 @@ public class JobappService {
 		return jobappRepository.findByUser(user);
 	}
 
-
+	public List<Jobapp> allByUserAndStatus(User user, String status) {
+		return jobappRepository.findByUserAndStatus(user, status);
+	}
 
 }

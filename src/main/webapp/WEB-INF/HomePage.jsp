@@ -28,7 +28,7 @@
   <li><a href="#contact">About Us</a></li>
   <li><a href="#news">Seminars</a></li>
   <li><a href="#contact">Tips</a></li>
-    <li><a href="#news">Stats</a></li>
+    <li><a href="/status/stats">Stats</a></li>
     <li><a class="active" href="/job-quest">Home</a></li>
   
 </ul>

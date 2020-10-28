@@ -189,4 +189,23 @@ public class MainController {
 	}
 	
 	
+	@RequestMapping("/status/stats")
+    public String statusStats(HttpSession session, Model model, RedirectAttributes flash) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	// IF USER NOT IN SESSION, BOOT THEM OUT AND REDIRECT THEM TO LOGIN PAGE WITH ERROR
+    	if(userId == null) {
+    		flash.addFlashAttribute("error", "You must be logged in to view that page!");
+    		return "redirect:/login";
+    	}
+    	// IF SUCCESSFULY LOGGED IN THEN GIVE ACCESS AND SHOW THE DASHBOARD PAGE
+    	User u = userService.findUserById(userId);
+    	List<Jobapp> job = jobappService.allByUser(u);
+//    	List<Jobapp> job = jobappService.findAll();
+    	List<Jobapp> status = jobappService.allByUserAndStatus(u, "Applied");
+    	model.addAttribute("stat", status);
+    	model.addAttribute("user", u );
+    	model.addAttribute("jobs", job);
+    	return "StatsPage.jsp";
+    }
+	
 }

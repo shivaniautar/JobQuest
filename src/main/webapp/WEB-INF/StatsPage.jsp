@@ -31,13 +31,20 @@
 
 	<h1>Hi <c:out value="${user.firstName}" />!</h1>
 	
-	<h2>See Your Job Applications by status:</h2>
+	<h2>See Your Job Applications by status: <c:out value="${s.len}"></c:out></h2>
 	
 		<table>
 	    <thead>
 	        <tr class="toprow">
-	            <th>Status</th>
-	            <th>Job Applications:</th>
+	            <th>Company:</th>
+	            <th>Location:</th>
+	            <th>Role Level:</th>
+	           	<th>Position Title:</th>
+	            <th>Salary:</th>
+	            <th>Link:</th>
+	            <th>Application Date:</th>
+	            <th>Comments:</th>
+	            <th>Actions:</th>
 
 	        </tr>
 	    </thead>
@@ -45,8 +52,15 @@
 	    
 		    		<c:forEach items="${stat}" var="s">
 		    	<tr>
-		            	<td><c:out value="${s.company}"></c:out></td>
-		            	<td><c:out value="${s.status}"></c:out></td>
+		            	<td><a href="/jobapplication/${s.id}"><c:out value="${s.company}"></c:out></a></td>
+		            	<td><c:out value="${s.location}"></c:out></td>
+		            	<td><c:out value="${s.roletype}"></c:out></td>
+		            	<td><c:out value="${s.role}"></c:out></td>
+		            	<td><c:out value="${s.salary}"></c:out></td>
+		            	<td><a href="${s.link}"><c:out value="${s.link}"></c:out></a></td>
+		            	<td><c:out value="${s.appdate}"></c:out></td>
+		            	<td><c:out value="${s.comments}"></c:out></td>
+		            	<td><a href="/jobapplication/${s.id}/edit">Update Application</a></td>
 		    	</tr>
 		            </c:forEach>
 	    </tbody>

@@ -202,6 +202,8 @@ public class MainController {
     	List<Jobapp> job = jobappService.allByUser(u);
 //    	List<Jobapp> job = jobappService.findAll();
     	List<Jobapp> status = jobappService.allByUserAndStatus(u, "Applied");
+    	List<Jobapp> needtoapply = jobappService.allByUserAndStatus(u, "Need To Apply");
+    	model.addAttribute("need", needtoapply);
     	model.addAttribute("stat", status);
     	model.addAttribute("user", u );
     	model.addAttribute("jobs", job);

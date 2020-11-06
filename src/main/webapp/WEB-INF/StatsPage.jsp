@@ -66,6 +66,41 @@
 	    </tbody>
 	</table><br><br>
 	
+	<h2>See Your Job Applications by status: <c:out value="${n.len}"></c:out></h2>
+	
+		<table>
+	    <thead>
+	        <tr class="toprow">
+	            <th>Company:</th>
+	            <th>Location:</th>
+	            <th>Role Level:</th>
+	           	<th>Position Title:</th>
+	            <th>Salary:</th>
+	            <th>Link:</th>
+	            <th>Application Date:</th>
+	            <th>Comments:</th>
+	            <th>Actions:</th>
+
+	        </tr>
+	    </thead>
+	    <tbody>
+	    
+		    		<c:forEach items="${need}" var="n">
+		    	<tr>
+		            	<td><a href="/jobapplication/${n.id}"><c:out value="${n.company}"></c:out></a></td>
+		            	<td><c:out value="${n.location}"></c:out></td>
+		            	<td><c:out value="${n.roletype}"></c:out></td>
+		            	<td><c:out value="${n.role}"></c:out></td>
+		            	<td><c:out value="${n.salary}"></c:out></td>
+		            	<td><a href="${n.link}"><c:out value="${s.link}"></c:out></a></td>
+		            	<td><c:out value="${n.appdate}"></c:out></td>
+		            	<td><c:out value="${n.comments}"></c:out></td>
+		            	<td><a href="/jobapplication/${n.id}/edit">Update Application</a></td>
+		    	</tr>
+		            </c:forEach>
+	    </tbody>
+	</table><br><br>
+	
 	
 	
 	

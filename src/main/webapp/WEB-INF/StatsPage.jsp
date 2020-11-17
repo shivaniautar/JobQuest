@@ -31,7 +31,7 @@
 
 	<h1>Hi <c:out value="${user.firstName}" />!</h1>
 	
-	<h2>See Your Job Applications by status: <c:out value="${s.len}"></c:out></h2>
+	<h2>See Your Job Applications by status: Applied <c:out value="${s.len}"></c:out></h2>
 	
 		<table>
 	    <thead>
@@ -66,7 +66,7 @@
 	    </tbody>
 	</table><br><br>
 	
-	<h2>See Your Job Applications by status: <c:out value="${n.len}"></c:out></h2>
+	<h2>See Your Job Applications by status: Applied<c:out value="${n.len}"></c:out></h2>
 	
 		<table>
 	    <thead>

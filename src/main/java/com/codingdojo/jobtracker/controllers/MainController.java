@@ -203,10 +203,12 @@ public class MainController {
 //    	List<Jobapp> job = jobappService.findAll();
     	List<Jobapp> status = jobappService.allByUserAndStatus(u, "Applied");
     	List<Jobapp> needtoapply = jobappService.allByUserAndStatus(u, "Need To Apply");
+    	List<Jobapp> firstinterviewdone = jobappService.allByUserAndStatus(u, "First Interview Done");
     	model.addAttribute("need", needtoapply);
     	model.addAttribute("stat", status);
     	model.addAttribute("user", u );
     	model.addAttribute("jobs", job);
+    	model.addAttribute("fid", firstinterviewdone);
     	return "StatsPage.jsp";
     }
 	

@@ -92,7 +92,7 @@
 		            	<td><c:out value="${n.roletype}"></c:out></td>
 		            	<td><c:out value="${n.role}"></c:out></td>
 		            	<td><c:out value="${n.salary}"></c:out></td>
-		            	<td><a href="${n.link}"><c:out value="${s.link}"></c:out></a></td>
+		            	<td><a href="${n.link}"><c:out value="${n.link}"></c:out></a></td>
 		            	<td><c:out value="${n.appdate}"></c:out></td>
 		            	<td><c:out value="${n.comments}"></c:out></td>
 		            	<td><a href="/jobapplication/${n.id}/edit">Update Application</a></td>
@@ -100,6 +100,42 @@
 		            </c:forEach>
 	    </tbody>
 	</table><br><br>
+	
+	<h2>See Your Job Applications by status: Applied <c:out value="${f.len}"></c:out></h2>
+	
+		<table>
+	    <thead>
+	        <tr class="toprow">
+	            <th>Company:</th>
+	            <th>Location:</th>
+	            <th>Role Level:</th>
+	           	<th>Position Title:</th>
+	            <th>Salary:</th>
+	            <th>Link:</th>
+	            <th>Application Date:</th>
+	            <th>Comments:</th>
+	            <th>Actions:</th>
+
+	        </tr>
+	    </thead>
+	    <tbody>
+	    
+		    		<c:forEach items="${fid}" var="f">
+		    	<tr>
+		            	<td><a href="/jobapplication/${f.id}"><c:out value="${f.company}"></c:out></a></td>
+		            	<td><c:out value="${f.location}"></c:out></td>
+		            	<td><c:out value="${f.roletype}"></c:out></td>
+		            	<td><c:out value="${f.role}"></c:out></td>
+		            	<td><c:out value="${f.salary}"></c:out></td>
+		            	<td><a href="${f.link}"><c:out value="${f.link}"></c:out></a></td>
+		            	<td><c:out value="${f.appdate}"></c:out></td>
+		            	<td><c:out value="${f.comments}"></c:out></td>
+		            	<td><a href="/jobapplication/${f.id}/edit">Update Application</a></td>
+		    	</tr>
+		            </c:forEach>
+	    </tbody>
+	</table><br><br>
+	
 	
 	
 	

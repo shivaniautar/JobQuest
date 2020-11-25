@@ -30,8 +30,9 @@
 
 
 	<h1>Hi <c:out value="${user.firstName}" />!</h1>
+	<h2>See Your Job Applications by Status:</h2>
 	
-	<h2>See Your Job Applications by status: Applied <c:out value="${s.len}"></c:out></h2>
+	<h2>Applied <c:out value="${s.len}"></c:out></h2>
 	
 		<table>
 	    <thead>
@@ -66,7 +67,7 @@
 	    </tbody>
 	</table><br><br>
 	
-	<h2>See Your Job Applications by status: Applied<c:out value="${n.len}"></c:out></h2>
+	<h2>Need To Apply<c:out value="${n.len}"></c:out></h2>
 	
 		<table>
 	    <thead>
@@ -101,7 +102,7 @@
 	    </tbody>
 	</table><br><br>
 	
-	<h2>See Your Job Applications by status: Applied <c:out value="${f.len}"></c:out></h2>
+	<h2>First Interview Done<c:out value="${f.len}"></c:out></h2>
 	
 		<table>
 	    <thead>
